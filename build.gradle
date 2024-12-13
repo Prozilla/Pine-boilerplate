@@ -1,0 +1,29 @@
+plugins {
+    id "java"
+}
+
+group = "dev.prozilla"
+version = "1.0.0"
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://repo.gradle.org/gradle/libs-releases"
+    }
+    maven {
+        url = uri("https://maven.pkg.github.com/prozilla/pine")
+        credentials {
+            username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+            password = project.findProperty("gpr.token") ?: System.getenv("TOKEN")
+        }
+    }
+}
+
+dependencies {
+    implementation "dev.prozilla:pine:1.0.0"
+}
+
+tasks.register("run", JavaExec) {
+    mainClass = "dev.prozilla.Main"
+    classpath = sourceSets.main.runtimeClasspath
+}
