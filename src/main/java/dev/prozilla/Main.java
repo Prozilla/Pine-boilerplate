@@ -13,6 +13,7 @@ public class Main {
 		applicationBuilder.setTitle("Pine boilerplate");
 		applicationBuilder.setIcons("pine.png");
 		applicationBuilder.setWindowSize(800, 600);
+		applicationBuilder.setInitialScene(new Scene());
 		
 		applicationBuilder.buildAndRun();
 	}

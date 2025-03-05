@@ -20,7 +20,7 @@ repositories {
 }
 
 dependencies {
-    implementation "dev.prozilla:pine:1.0.0"
+    implementation "dev.prozilla:pine:1.0.2"
 }
 
 tasks.register("run", JavaExec) {
